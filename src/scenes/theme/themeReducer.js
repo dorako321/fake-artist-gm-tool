@@ -3,19 +3,19 @@ import * as ThemeAction from './themeAction';
 
 const initialState = {
     themes: [],
-    selectedTheme: null
+    selectedTheme: null,
+    selectedAnswer: null
 };
 
 export default function theme(state = initialState, action) {
     switch (action.type) {
-        case ThemeAction.SELECT_THEME: {
+        case ThemeAction.SELECT_ANSWER: {
             return Object.assign({}, state, {
-                selectedTheme: action.selectedTheme
+                selectedTheme: action.selectedTheme,
+                selectedAnswer: action.selectedAnswer
             })
         }
         case ThemeAction.FETCH_THEME_LIST_COMPLETE: {
-            // console.log('action')
-            // console.log(action)
             return Object.assign({}, state, {
                 themes: action.items.themes
             })

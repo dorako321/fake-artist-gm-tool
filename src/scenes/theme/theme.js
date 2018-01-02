@@ -20,7 +20,7 @@ class Theme extends Component {
         console.log();
         // ランダムにお題を選択
         const {dispatch} = this.props
-        dispatch(actions.selectTheme(selectedTheme))
+        dispatch(actions.selectAnswer(selectedTheme, this.props.themeReducer.themes))
 
         // 次のシーンへ移動
         this.props.history.push('/notice')

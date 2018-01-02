@@ -1,4 +1,4 @@
-export const SELECT_THEME = 'SELECT_THEME';
+export const SELECT_ANSWER = 'SELECT_ANSWER';
 
 export const FETCH_THEME_LIST = 'FETCH_THEME_LIST'
 export const FETCH_THEME_LIST_COMPLETE = 'FETCH_THEME_LIST_COMPLITE'
@@ -23,10 +23,12 @@ export function fetchThemeList() {
     }
 }
 
-
-export function selectTheme(theme) {
+export function selectAnswer(theme, themeList) {
+    const answerList = themeList.find(o => o.theme === theme);
+    const answer = answerList.list[Math.floor(Math.random() * answerList.list.length)]
     return {
-        type: SELECT_THEME,
-        selectedTheme: theme
+        type: SELECT_ANSWER,
+        selectedTheme: theme,
+        selectedAnswer: answer
     }
 }
