@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-import Avatar from 'material-ui/Avatar';
+import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/GridList';
 
-// ゲーム開始ボタン
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 // 人数調整ボタン
 import FontIcon from 'material-ui/FontIcon';
@@ -16,16 +13,14 @@ import * as actions from './indexAction'
 
 
 const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
+    root: {},
+    usernumber: {
+        fontSize: '3em',
+        textAlign: 'center'
     },
-    gridList: {
-        width: '100%',
-        height: '100%',
-        overflowY: 'auto',
-    },
+    controller: {
+        textAlign: 'center'
+    }
 };
 
 class Index extends Component {
@@ -54,12 +49,22 @@ class Index extends Component {
 
         return (
             <div style={styles.root}>
-                <div className="floating">
-                    <FontIcon className="fa fa-minus-circle" aria-hidden="true" onClick={e => this.clickMinus()}></FontIcon>
-                    <div id={""}>{userNumber}</div>
-                    <FontIcon className="fa fa-plus-circle" aria-hidden="true" onClick={e => this.clickPlus()}></FontIcon>
-                </div>
-                <button onClick={e => this.selectTheme()}>次へ</button>
+                <Paper className={styles.paper}>
+                    <div class="row">
+                        <div class="col s4" style={styles.controller}>
+                            <FontIcon className="fa fa-minus-circle" aria-hidden="true"
+                                      onClick={() => this.clickMinus()}/></div>
+                        <div class="col s4">
+                            <div style={styles.usernumber}>{userNumber}</div>
+                        </div>
+                        <div class="col s4" style={styles.controller}>
+                            <FontIcon className="fa fa-plus-circle" aria-hidden="true"
+                                      onClick={() => this.clickPlus()}/></div>
+                    </div>
+
+
+                    <RaisedButton onClick={e => this.selectTheme()}>次へ</RaisedButton>
+                </Paper>
 
 
             </div>

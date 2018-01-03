@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import * as actions from './themeAction'
+import Divider from 'material-ui/Divider';
 
 
-const styles = {};
+const styles = {
+    textArea : {
+        textAlign: 'center',
+        rounded: true,
+        margin: 'auto',
+    }
+};
 
 class Theme extends Component {
     constructor(props) {
@@ -32,7 +39,7 @@ class Theme extends Component {
 
         return (
             <div style={styles.root}>
-                <div>
+                <div style={styles.textArea}>
                     問題のテーマを選択してください
                 </div>
                 <ul onClick={this.onThemeClick}>
@@ -40,6 +47,11 @@ class Theme extends Component {
                         <li key={item.theme} data-itemid={item.theme}>{item.theme}</li>
                     ))}
                 </ul>
+                <Divider />
+                <div style={styles.textArea}>
+                    または、自分で問題を設定
+
+                </div>
 
             </div>
         );

@@ -5,7 +5,9 @@ import * as actions from './noticeAction'
 import RaisedButton from 'material-ui/RaisedButton';
 
 
-const styles = {};
+const styles = {
+    root: {}
+};
 
 class Notice extends Component {
     constructor(props) {
