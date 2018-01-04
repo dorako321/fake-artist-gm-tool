@@ -50,14 +50,14 @@ class Index extends Component {
         return (
             <div style={styles.root}>
                 <Paper className={styles.paper}>
-                    <div class="row">
-                        <div class="col s4" style={styles.controller}>
+                    <div className="row">
+                        <div className="col s4" style={styles.controller}>
                             <FontIcon className="fa fa-minus-circle" aria-hidden="true"
                                       onClick={() => this.clickMinus()}/></div>
-                        <div class="col s4">
+                        <div className="col s4">
                             <div style={styles.usernumber}>{userNumber}</div>
                         </div>
-                        <div class="col s4" style={styles.controller}>
+                        <div className="col s4" style={styles.controller}>
                             <FontIcon className="fa fa-plus-circle" aria-hidden="true"
                                       onClick={() => this.clickPlus()}/></div>
                     </div>
