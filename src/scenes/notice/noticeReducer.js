@@ -18,6 +18,7 @@ export default function notice(state = initialState, action) {
                 maxNumber: action.items.maxNumber,
                 theme: action.items.theme,
                 answer: action.items.answer,
+                number : 0,
                 fakeArtistNumber: action.items.fakeArtistNumber,
             })
         }
